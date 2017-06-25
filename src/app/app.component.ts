@@ -75,8 +75,10 @@ export class AppComponent implements OnInit {
 
 	constructor(private heroService: HeroService){}
 
+	//change the implementation to act on the Promise when it resolves.
 	getHeroes(): void {
-		this.heroes = this.heroService.getHeroes();
+		//Arrow function is more succinct than the equivalent function expression and gracefully handles this.
+		this.heroService.getHeroes().then(heroes => this.heroes = heroes);
 
 	}
 

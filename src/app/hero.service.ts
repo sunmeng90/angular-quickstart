@@ -13,7 +13,7 @@ export class HeroService{
   getHeroesSlowly(): Promise<Hero[]> {
   	return new Promise(resolve => {
   		//simulate server latency with 2 seconds delay
-  		setTimeout(() => resolve(this.getHeroes()), 2000);
+  		setTimeout(() => resolve(this.getHeroes()), 500);
   	});
   }
 

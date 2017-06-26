@@ -17,9 +17,9 @@ export class HeroDetailComponent implements OnInit {
 	@Input() hero: Hero;
 
 	constructor(
-		private heroServcie: HeroService;
-		private route: ActivatedRoute;
-		private location: Location;
+		private heroServcie: HeroService,
+		private route: ActivatedRoute,
+		private location: Location
 		
 	){}
 	//The switchMap operator maps the id in the Observable route parameters to a new Observable, the result of the HeroService.getHero() method.

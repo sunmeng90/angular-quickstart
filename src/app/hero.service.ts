@@ -8,6 +8,8 @@ import { Hero } from './hero';
 
 @Injectable()
 export class HeroService{
+  private headers = new Headers({'Content-Type': 'application/json'});
+
   private heroesUrl='api/heroes';
 
   constructor(private http: Http){}
@@ -59,10 +61,10 @@ export class HeroService{
       .catch( this.handleError);
   }
 
-  delete( id: number): Promise<void> {
+  delete(id: number): Promise<void> {
     const url = `${this.heroesUrl}/${id}`;
     return this.http
-      .delete(url, JSON.stringify({id:id}), {headers: this.headers})
+      .delete(url,{headers: this.headers})
       .toPromise()
       .then(() => null)
       .catch(this.handleError);
